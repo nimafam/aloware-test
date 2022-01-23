@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Aloware Test Project</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://api-app.test";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.21.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.21.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-article--post_id-">
+                        <a href="#endpoints-GETapi-article--post_id-">Get Post</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-article-comments--post_id-">
+                        <a href="#endpoints-GETapi-article-comments--post_id-">Get Comments</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-comment-store--post_id-">
+                        <a href="#endpoints-POSTapi-comment-store--post_id-">Store Comment</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-reply-store--post_id-">
+                        <a href="#endpoints-POSTapi-reply-store--post_id-">Store Reply</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-documentation">
+                        <a href="#endpoints-GETapi-documentation">Display Swagger API page.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-oauth2-callback">
+                        <a href="#endpoints-GETapi-oauth2-callback">Display Oauth2 callback pages.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-articles">
+                        <a href="#endpoints-GETapi-articles">List Articles</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: January 22 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This is a Aloware test project with 5 endpoints</p>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://api-app.test</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-article--post_id-">Get Post</h2>
+
+<p>
+</p>
+
+<p>to get post</p>
+
+<span id="example-requests-GETapi-article--post_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://api-app.test/api/article/nostrum" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/article/nostrum"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://api-app.test/api/article/nostrum',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-article--post_id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;error&quot;: false,
+    &quot;message&quot;: &quot;The post has been fetched successfully!&quot;,
+    &quot;blog&quot;: {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;The Basics Of Bird Migration\n&quot;,
+        &quot;slug&quot;: &quot;The Basics Of Bird Migration\n&quot;,
+        &quot;content&quot;: &quot;        &lt;p class=\&quot;text-justify\&quot;&gt;\n          Geese winging their way south in wrinkled V-shaped flocks is perhaps the classic picture of\n          migration&mdash;the annual, large-scale movement of birds between their breeding (summer) homes and their\n          nonbreeding (winter) grounds. But geese are far from our only migratory birds. Of the more than 650\n          species of North American breeding birds, more than half are migratory.\n        &lt;/p&gt;\n        &lt;div class=\&quot;text-h6 text-weight-medium\&quot;&gt;Why Do Birds Migrate?&lt;/div&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          Birds migrate to move from areas of low or decreasing resources to areas of high or increasing\n          resources. The two primary resources being sought are food and nesting locations. Here&rsquo;s more about\n          how migration evolved.\n\n          Birds that nest in the Northern Hemisphere tend to migrate northward in the spring to take advantage\n          of burgeoning insect populations, budding plants and an abundance of nesting locations. As winter\n          approaches and the availability of insects and other food drops, the birds move south again.\n          Escaping the cold is a motivating factor but many species, including hummingbirds, can withstand\n          freezing temperatures as long as an adequate supply of food is available.\n        &lt;/p&gt;\n        &lt;div class=\&quot;text-h6 text-weight-medium\&quot;&gt;Origins Of Long-Distance Migration&lt;/div&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          While short-distance migration probably developed from a fairly simple need for food, the origins of\n          long-distant migration patterns are much more complex. They&rsquo;ve evolved over thousands of years and\n          are controlled at least partially by the genetic makeup of the birds. They also incorporate\n          responses to weather, geography, food sources, day length, and other factors.\n        &lt;/p&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          For birds that winter in the tropics, it seems strange to imagine leaving home and embarking on a\n          migration north. Why make such an arduous trip north in spring? One idea is that through many\n          generations the tropical ancestors of these birds dispersed from their tropical breeding sites\n          northward. The seasonal abundance of insect food and greater day length allowed them to raise more\n          young (4&ndash;6 on average) than their stay-at-home tropical relatives (2&ndash;3 on average). As their\n          breeding zones moved north during periods of glacial retreat, the birds continued to return to their\n          tropical homes as winter weather and declining food supplies made life more difficult. Supporting\n          this theory is the fact that most North American vireos, flycatchers, tanagers, warblers, orioles,\n          and swallows have evolved from forms that originated in the tropics.\n        &lt;/p&gt;&quot;,
+        &quot;cover&quot;: &quot;andy-li-r2AlgxMb-yc-unsplash.jpg&quot;,
+        &quot;likes&quot;: 0,
+        &quot;views&quot;: 0,
+        &quot;created_at&quot;: null,
+        &quot;updated_at&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-article--post_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-article--post_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-article--post_id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-article--post_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-article--post_id-"></code></pre>
+</span>
+<form id="form-GETapi-article--post_id-" data-method="GET"
+      data-path="api/article/{post_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-article--post_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-article--post_id-"
+                    onclick="tryItOut('GETapi-article--post_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-article--post_id-"
+                    onclick="cancelTryOut('GETapi-article--post_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-article--post_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/article/{post_id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>post_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="post_id"
+               data-endpoint="GETapi-article--post_id-"
+               value="nostrum"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the post.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-article-comments--post_id-">Get Comments</h2>
+
+<p>
+</p>
+
+<p>To get comments of a post</p>
+
+<span id="example-requests-GETapi-article-comments--post_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://api-app.test/api/article/comments/17" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/article/comments/17"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://api-app.test/api/article/comments/17',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-article-comments--post_id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;error&quot;: false,
+ &quot;message&quot;:  &quot;Comments fetched successfully!&quot;,
+ &quot;comments&quot;: [
+     {
+     &quot;id&quot;: 69,
+     &quot;user_id&quot;: 1,
+     &quot;parent_id&quot;: 0,
+     &quot;comment&quot;: &quot;Is this post 1?&quot;,
+     &quot;commentable_id&quot;: 1,
+     &quot;commentable_type&quot;: &quot;post&quot;,
+     &quot;created_at&quot;: &quot;2022-01-22T18:32:16.000000Z&quot;,
+     &quot;updated_at&quot;: &quot;2022-01-22T18:32:16.000000Z&quot;,
+     &quot;replies&quot;: [
+         ...
+     ],
+     &quot;user&quot;: {
+     &quot;id&quot;: 1,
+     &quot;name&quot;: &quot;nima&quot;
+         }
+     }
+ ],
+ ...
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-article-comments--post_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-article-comments--post_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-article-comments--post_id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-article-comments--post_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-article-comments--post_id-"></code></pre>
+</span>
+<form id="form-GETapi-article-comments--post_id-" data-method="GET"
+      data-path="api/article/comments/{post_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-article-comments--post_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-article-comments--post_id-"
+                    onclick="tryItOut('GETapi-article-comments--post_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-article-comments--post_id-"
+                    onclick="cancelTryOut('GETapi-article-comments--post_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-article-comments--post_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/article/comments/{post_id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>post_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="post_id"
+               data-endpoint="GETapi-article-comments--post_id-"
+               value="17"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the post.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-comment-store--post_id-">Store Comment</h2>
+
+<p>
+</p>
+
+<p>To store comment of post you can use this store function</p>
+
+<span id="example-requests-POSTapi-comment-store--post_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://api-app.test/api/comment/store/9" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"comment\": \"blanditiis\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/comment/store/9"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "comment": "blanditiis"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://api-app.test/api/comment/store/9',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'comment' =&gt; 'blanditiis',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-comment-store--post_id-">
+</span>
+<span id="execution-results-POSTapi-comment-store--post_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-comment-store--post_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-comment-store--post_id-"></code></pre>
+</span>
+<span id="execution-error-POSTapi-comment-store--post_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-comment-store--post_id-"></code></pre>
+</span>
+<form id="form-POSTapi-comment-store--post_id-" data-method="POST"
+      data-path="api/comment/store/{post_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-comment-store--post_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-comment-store--post_id-"
+                    onclick="tryItOut('POSTapi-comment-store--post_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-comment-store--post_id-"
+                    onclick="cancelTryOut('POSTapi-comment-store--post_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-comment-store--post_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/comment/store/{post_id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>post_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="post_id"
+               data-endpoint="POSTapi-comment-store--post_id-"
+               value="9"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the post</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>comment</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="comment"
+               data-endpoint="POSTapi-comment-store--post_id-"
+               value="blanditiis"
+               data-component="body" hidden>
+    <br>
+<p>The comment body</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-POSTapi-reply-store--post_id-">Store Reply</h2>
+
+<p>
+</p>
+
+<p>To store comment of post you can use this store function</p>
+
+<span id="example-requests-POSTapi-reply-store--post_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://api-app.test/api/reply/store/11" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"comment\": \"necessitatibus\",
+    \"comment_id\": 10
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/reply/store/11"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "comment": "necessitatibus",
+    "comment_id": 10
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://api-app.test/api/reply/store/11',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'comment' =&gt; 'necessitatibus',
+            'comment_id' =&gt; 10,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-reply-store--post_id-">
+</span>
+<span id="execution-results-POSTapi-reply-store--post_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-reply-store--post_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-reply-store--post_id-"></code></pre>
+</span>
+<span id="execution-error-POSTapi-reply-store--post_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-reply-store--post_id-"></code></pre>
+</span>
+<form id="form-POSTapi-reply-store--post_id-" data-method="POST"
+      data-path="api/reply/store/{post_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-reply-store--post_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-reply-store--post_id-"
+                    onclick="tryItOut('POSTapi-reply-store--post_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-reply-store--post_id-"
+                    onclick="cancelTryOut('POSTapi-reply-store--post_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-reply-store--post_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/reply/store/{post_id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>post_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="post_id"
+               data-endpoint="POSTapi-reply-store--post_id-"
+               value="11"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the post</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>comment</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="comment"
+               data-endpoint="POSTapi-reply-store--post_id-"
+               value="necessitatibus"
+               data-component="body" hidden>
+    <br>
+<p>The comment body</p>
+        </p>
+                <p>
+            <b><code>comment_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="comment_id"
+               data-endpoint="POSTapi-reply-store--post_id-"
+               value="10"
+               data-component="body" hidden>
+    <br>
+<p>The ID of parent comment</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETapi-documentation">Display Swagger API page.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-documentation">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://api-app.test/api/documentation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/documentation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://api-app.test/api/documentation',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-documentation">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">&lt;!-- HTML for static distribution bundle build --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;L5 Swagger UI&lt;/title&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://api-app.test/docs/asset/swagger-ui.css?v=b47dcdb59251cf1254ee38395c18b5b9&quot; &gt;
+  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://api-app.test/docs/asset/favicon-32x32.png?v=40d4f2c38d1cd854ad463f16373cbcb6&quot; sizes=&quot;32x32&quot; /&gt;
+  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://api-app.test/docs/asset/favicon-16x16.png?v=f0ae831196d55d8f4115b6c5e8ec5384&quot; sizes=&quot;16x16&quot; /&gt;
+  &lt;style&gt;
+    html
+    {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+        box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; style=&quot;position:absolute;width:0;height:0&quot;&gt;
+  &lt;defs&gt;
+    &lt;symbol viewBox=&quot;0 0 20 20&quot; id=&quot;unlocked&quot;&gt;
+          &lt;path d=&quot;M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8z&quot;&gt;&lt;/path&gt;
+    &lt;/symbol&gt;
+
+    &lt;symbol viewBox=&quot;0 0 20 20&quot; id=&quot;locked&quot;&gt;
+      &lt;path d=&quot;M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8zM12 8H8V5.199C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8z&quot;/&gt;
+    &lt;/symbol&gt;
+
+    &lt;symbol viewBox=&quot;0 0 20 20&quot; id=&quot;close&quot;&gt;
+      &lt;path d=&quot;M14.348 14.849c-.469.469-1.229.469-1.697 0L10 11.819l-2.651 3.029c-.469.469-1.229.469-1.697 0-.469-.469-.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-.469-.469-.469-1.228 0-1.697.469-.469 1.228-.469 1.697 0L10 8.183l2.651-3.031c.469-.469 1.228-.469 1.697 0 .469.469.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c.469.469.469 1.229 0 1.698z&quot;/&gt;
+    &lt;/symbol&gt;
+
+    &lt;symbol viewBox=&quot;0 0 20 20&quot; id=&quot;large-arrow&quot;&gt;
+      &lt;path d=&quot;M13.25 10L6.109 2.58c-.268-.27-.268-.707 0-.979.268-.27.701-.27.969 0l7.83 7.908c.268.271.268.709 0 .979l-7.83 7.908c-.268.271-.701.27-.969 0-.268-.269-.268-.707 0-.979L13.25 10z&quot;/&gt;
+    &lt;/symbol&gt;
+
+    &lt;symbol viewBox=&quot;0 0 20 20&quot; id=&quot;large-arrow-down&quot;&gt;
+      &lt;path d=&quot;M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83c-.27.268-.707.268-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969.271-.268.709-.268.979 0L10 13.25l7.418-7.141z&quot;/&gt;
+    &lt;/symbol&gt;
+
+
+    &lt;symbol viewBox=&quot;0 0 24 24&quot; id=&quot;jump-to&quot;&gt;
+      &lt;path d=&quot;M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z&quot;/&gt;
+    &lt;/symbol&gt;
+
+    &lt;symbol viewBox=&quot;0 0 24 24&quot; id=&quot;expand&quot;&gt;
+      &lt;path d=&quot;M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z&quot;/&gt;
+    &lt;/symbol&gt;
+
+  &lt;/defs&gt;
+&lt;/svg&gt;
+
+&lt;div id=&quot;swagger-ui&quot;&gt;&lt;/div&gt;
+
+&lt;script src=&quot;http://api-app.test/docs/asset/swagger-ui-bundle.js?v=798d369d6387e66b7278e63cb950a32f&quot;&gt; &lt;/script&gt;
+&lt;script src=&quot;http://api-app.test/docs/asset/swagger-ui-standalone-preset.js?v=e3a4b013757e84ad70d1ef12270ba31a&quot;&gt; &lt;/script&gt;
+&lt;script&gt;
+window.onload = function() {
+  // Build a system
+  const ui = SwaggerUIBundle({
+    dom_id: &#039;#swagger-ui&#039;,
+
+    url: &quot;http://api-app.test/docs/api-docs.json&quot;,
+    operationsSorter: null,
+    configUrl: null,
+    validatorUrl: null,
+    oauth2RedirectUrl: &quot;http://api-app.test/api/oauth2-callback&quot;,
+
+    requestInterceptor: function(request) {
+      request.headers[&#039;X-CSRF-TOKEN&#039;] = &#039;&#039;;
+      return request;
+    },
+
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+
+    layout: &quot;StandaloneLayout&quot;,
+    docExpansion : &quot;none&quot;,
+    filter: true,
+    persistAuthorization: &quot;false&quot;,
+
+    })
+
+  window.ui = ui
+}
+&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-documentation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-documentation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-documentation"></code></pre>
+</span>
+<span id="execution-error-GETapi-documentation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-documentation"></code></pre>
+</span>
+<form id="form-GETapi-documentation" data-method="GET"
+      data-path="api/documentation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-documentation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-documentation"
+                    onclick="tryItOut('GETapi-documentation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-documentation"
+                    onclick="cancelTryOut('GETapi-documentation');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-documentation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/documentation</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-oauth2-callback">Display Oauth2 callback pages.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-oauth2-callback">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://api-app.test/api/oauth2-callback" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/oauth2-callback"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://api-app.test/api/oauth2-callback',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-oauth2-callback">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">&lt;!doctype html&gt;
+&lt;html lang=&quot;en-US&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Swagger UI: OAuth2 Redirect&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+    &#039;use strict&#039;;
+    function run () {
+        var oauth2 = window.opener.swaggerUIRedirectOauth2;
+        var sentState = oauth2.state;
+        var redirectUrl = oauth2.redirectUrl;
+        var isValid, qp, arr;
+
+        if (/code|token|error/.test(window.location.hash)) {
+            qp = window.location.hash.substring(1);
+        } else {
+            qp = location.search.substring(1);
+        }
+
+        arr = qp.split(&quot;&amp;&quot;);
+        arr.forEach(function (v,i,_arr) { _arr[i] = &#039;&quot;&#039; + v.replace(&#039;=&#039;, &#039;&quot;:&quot;&#039;) + &#039;&quot;&#039;;});
+        qp = qp ? JSON.parse(&#039;{&#039; + arr.join() + &#039;}&#039;,
+                function (key, value) {
+                    return key === &quot;&quot; ? value : decodeURIComponent(value);
+                }
+        ) : {};
+
+        isValid = qp.state === sentState;
+
+        if ((
+          oauth2.auth.schema.get(&quot;flow&quot;) === &quot;accessCode&quot; ||
+          oauth2.auth.schema.get(&quot;flow&quot;) === &quot;authorizationCode&quot; ||
+          oauth2.auth.schema.get(&quot;flow&quot;) === &quot;authorization_code&quot;
+        ) &amp;&amp; !oauth2.auth.code) {
+            if (!isValid) {
+                oauth2.errCb({
+                    authId: oauth2.auth.name,
+                    source: &quot;auth&quot;,
+                    level: &quot;warning&quot;,
+                    message: &quot;Authorization may be unsafe, passed state was changed in server Passed state wasn&#039;t returned from auth server&quot;
+                });
+            }
+
+            if (qp.code) {
+                delete oauth2.state;
+                oauth2.auth.code = qp.code;
+                oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});
+            } else {
+                let oauthErrorMsg;
+                if (qp.error) {
+                    oauthErrorMsg = &quot;[&quot;+qp.error+&quot;]: &quot; +
+                        (qp.error_description ? qp.error_description+ &quot;. &quot; : &quot;no accessCode received from the server. &quot;) +
+                        (qp.error_uri ? &quot;More info: &quot;+qp.error_uri : &quot;&quot;);
+                }
+
+                oauth2.errCb({
+                    authId: oauth2.auth.name,
+                    source: &quot;auth&quot;,
+                    level: &quot;error&quot;,
+                    message: oauthErrorMsg || &quot;[Authorization failed]: no accessCode received from the server&quot;
+                });
+            }
+        } else {
+            oauth2.callback({auth: oauth2.auth, token: qp, isValid: isValid, redirectUrl: redirectUrl});
+        }
+        window.close();
+    }
+
+    window.addEventListener(&#039;DOMContentLoaded&#039;, function () {
+      run();
+    });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-oauth2-callback" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-oauth2-callback"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-oauth2-callback"></code></pre>
+</span>
+<span id="execution-error-GETapi-oauth2-callback" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-oauth2-callback"></code></pre>
+</span>
+<form id="form-GETapi-oauth2-callback" data-method="GET"
+      data-path="api/oauth2-callback"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-oauth2-callback', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-oauth2-callback"
+                    onclick="tryItOut('GETapi-oauth2-callback');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-oauth2-callback"
+                    onclick="cancelTryOut('GETapi-oauth2-callback');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-oauth2-callback" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/oauth2-callback</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-articles">List Articles</h2>
+
+<p>
+</p>
+
+<p>to Get Articles</p>
+
+<span id="example-requests-GETapi-articles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://api-app.test/api/articles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api-app.test/api/articles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://api-app.test/api/articles',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-articles">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+  &quot;error&quot;: false,
+  &quot;message&quot;: &quot;Articles fetched successfully!&quot;,
+  &quot;blogs&quot;: [
+  {
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;The Basics Of Bird Migration\n&quot;,
+  &quot;slug&quot;: &quot;The Basics Of Bird Migration\n&quot;,
+  &quot;content&quot;: &quot;        &lt;p class=\&quot;text-justify\&quot;&gt;\n          Geese winging their way south in wrinkled V-shaped flocks is perhaps the classic picture of\n          migration&mdash;the annual, large-scale movement of birds between their breeding (summer) homes and their\n          nonbreeding (winter) grounds. But geese are far from our only migratory birds. Of the more than 650\n          species of North American breeding birds, more than half are migratory.\n        &lt;/p&gt;\n        &lt;div class=\&quot;text-h6 text-weight-medium\&quot;&gt;Why Do Birds Migrate?&lt;/div&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          Birds migrate to move from areas of low or decreasing resources to areas of high or increasing\n          resources. The two primary resources being sought are food and nesting locations. Here&rsquo;s more about\n          how migration evolved.\n\n          Birds that nest in the Northern Hemisphere tend to migrate northward in the spring to take advantage\n          of burgeoning insect populations, budding plants and an abundance of nesting locations. As winter\n          approaches and the availability of insects and other food drops, the birds move south again.\n          Escaping the cold is a motivating factor but many species, including hummingbirds, can withstand\n          freezing temperatures as long as an adequate supply of food is available.\n        &lt;/p&gt;\n        &lt;div class=\&quot;text-h6 text-weight-medium\&quot;&gt;Origins Of Long-Distance Migration&lt;/div&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          While short-distance migration probably developed from a fairly simple need for food, the origins of\n          long-distant migration patterns are much more complex. They&rsquo;ve evolved over thousands of years and\n          are controlled at least partially by the genetic makeup of the birds. They also incorporate\n          responses to weather, geography, food sources, day length, and other factors.\n        &lt;/p&gt;\n        &lt;p class=\&quot;text-justify\&quot;&gt;\n          For birds that winter in the tropics, it seems strange to imagine leaving home and embarking on a\n          migration north. Why make such an arduous trip north in spring? One idea is that through many\n          generations the tropical ancestors of these birds dispersed from their tropical breeding sites\n          northward. The seasonal abundance of insect food and greater day length allowed them to raise more\n          young (4&ndash;6 on average) than their stay-at-home tropical relatives (2&ndash;3 on average). As their\n          breeding zones moved north during periods of glacial retreat, the birds continued to return to their\n          tropical homes as winter weather and declining food supplies made life more difficult. Supporting\n          this theory is the fact that most North American vireos, flycatchers, tanagers, warblers, orioles,\n          and swallows have evolved from forms that originated in the tropics.\n        &lt;/p&gt;&quot;,
+  &quot;cover&quot;: &quot;andy-li-r2AlgxMb-yc-unsplash.jpg&quot;,
+  &quot;likes&quot;: 0,
+  &quot;views&quot;: 0,
+  &quot;created_at&quot;: null,
+  &quot;updated_at&quot;: null
+  },
+ ...
+ ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-articles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-articles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-articles"></code></pre>
+</span>
+<span id="execution-error-GETapi-articles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-articles"></code></pre>
+</span>
+<form id="form-GETapi-articles" data-method="GET"
+      data-path="api/articles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-articles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-articles"
+                    onclick="tryItOut('GETapi-articles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-articles"
+                    onclick="cancelTryOut('GETapi-articles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-articles" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/articles</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

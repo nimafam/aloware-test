@@ -8,6 +8,7 @@ To run project follow these steps:
 5. `npm instal -g quasar`
 6. `quasar build` if you want to change the axios base url go to the `src>boot>axios.js`
 7. `npm run dev`
+8. Run seeders to generate Post `php artisan db:seed`
 
 if you run in the development environment please run on port 3030
 

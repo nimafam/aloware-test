@@ -11,7 +11,7 @@
         >
           <q-card-section class="row justify-center">
             <q-img
-              src=""
+              :src="imageUrl"
               :ratio="1"
             />
             <div class="text-h6">{{ blog.title }}</div>
@@ -46,7 +46,6 @@ export default {
     ...mapGetters('blog', ['blogs']),
     imageUrl: () => {
       const type = ["people", "nature", "tech"];
-
       const random = Math.floor(Math.random() * type.length);
 
       return `https://placeimg.com/300/200/${type[random]}/grayscale`
